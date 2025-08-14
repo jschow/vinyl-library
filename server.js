@@ -32,7 +32,7 @@ app.get("/api/collection/:username/:folderId", async (req, res) => {
   }
 });
 
-const port = Number(process.env.PORT) || 5174;
+const port = Number(process.env.PORT) || 5175; // Changed default to 5175
 app.listen(port, () => {
   console.log(`Proxy running on http://localhost:${port}`);
 });
