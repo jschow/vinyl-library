@@ -14,11 +14,10 @@ export default function App() {
         USERNAME
       )}/${START_FOLDER_ID}?per_page=${PER_PAGE}&page=1`;
 
-      const res = await fetch(url);
-      const json = await res.json();
+      const { data } = await axios.get(url);
 
       const mapped =
-        (json.releases || []).map((entry) => ({
+        (data.releases || []).map((entry) => ({
           id: entry.id,
           title: entry.basic_information?.title ?? "Unknown",
           year: entry.basic_information?.year ?? "",
