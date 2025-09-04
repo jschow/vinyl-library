@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
+import Header from "./components/Header";
+import CardContainer from "./components/CardContainer";
+
 const USERNAME = "jschow";
 const START_FOLDER_ID = 0;
 const PER_PAGE = 100;
@@ -36,31 +39,8 @@ export default function App() {
 
   return (
     <main>
-      <h1>Justin's Vinyl Collection</h1>
-
-      <div className="grid">
-        {items.map((x) => (
-          <figure key={x.id} className="figure">
-            {x.cover ? (
-              <img
-                src={x.cover}
-                alt={x.title}
-                width={140}
-                height={140}
-                className="cover"
-                loading="lazy"
-              />
-            ) : (
-              <div className="cover-placeholder" />
-            )}
-            <figcaption className="caption">
-              <strong>{x.artists}</strong>
-              <br />
-              {x.title} {x.year ? `(${x.year})` : ""}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      <Header />
+      <CardContainer items={items} />
     </main>
   );
 }
