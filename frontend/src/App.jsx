@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./App.css";
-
 import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
+import Card from "./components/Card";
+import "./App.css";
 
 const USERNAME = "jschow";
 const START_FOLDER_ID = 0;
