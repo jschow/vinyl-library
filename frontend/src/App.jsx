@@ -38,9 +38,9 @@ export default function App() {
   }, []);
 
   return (
-    <main>
+    <>
       <Header />
       <CardContainer items={items} />
-    </main>
+    </>
   );
 }
